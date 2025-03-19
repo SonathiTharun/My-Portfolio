@@ -767,6 +767,183 @@
                 grid-template-columns: 1fr;
             }
         }
+
+        /* Add these new media queries at the end of existing styles */
+
+        @media (max-width: 992px) {
+
+            /* Tablet improvements */
+            .container {
+                width: 95%;
+                padding: 0 15px;
+            }
+
+            .project-card {
+                grid-template-columns: 1fr;
+            }
+
+            .skill-category {
+                flex: 1 1 45%;
+                margin: 10px;
+            }
+        }
+
+        @media (max-width: 768px) {
+
+            /* Mobile improvements */
+            .name {
+                font-size: 2.2rem;
+                line-height: 1.2;
+            }
+
+            .title {
+                font-size: 1.1rem;
+            }
+
+            .profile-img {
+                width: 150px;
+                height: 150px;
+            }
+
+            .contact-info {
+                font-size: 0.9rem;
+                padding: 0 15px;
+            }
+
+            .section-title {
+                font-size: 1.8rem;
+                margin-bottom: 30px;
+            }
+
+            .timeline-content {
+                padding: 20px;
+            }
+
+            .timeline-title {
+                font-size: 1.2rem;
+            }
+
+            .timeline-subtitle {
+                font-size: 1rem;
+            }
+
+            .project-img {
+                height: 200px;
+            }
+
+            .skill-category {
+                flex: 1 1 100%;
+                margin: 10px 0;
+            }
+
+            .card {
+                flex-direction: column;
+                text-align: center;
+            }
+
+            .card-icon {
+                margin: 0 0 15px 0;
+            }
+
+            .contact-form {
+                padding: 20px;
+            }
+
+            .form-control {
+                padding: 12px 15px;
+            }
+
+            .btn {
+                width: 100%;
+                padding: 12px 20px;
+            }
+
+            .nav-links {
+                top: 50px;
+            }
+
+            .nav-links li {
+                padding: 12px 0;
+            }
+        }
+
+        @media (max-width: 480px) {
+
+            /* Small mobile adjustments */
+            .name {
+                font-size: 1.8rem;
+            }
+
+            .title {
+                font-size: 1rem;
+            }
+
+            .profile-img {
+                width: 120px;
+                height: 120px;
+            }
+
+            .contact-info {
+                font-size: 0.8rem;
+            }
+
+            .section-title {
+                font-size: 1.6rem;
+            }
+
+            .about-contact {
+                padding: 20px;
+            }
+
+            .contact-item p {
+                font-size: 0.9rem;
+            }
+
+            .timeline-date {
+                position: relative;
+                top: 0;
+                right: 0;
+                margin-bottom: 10px;
+            }
+
+            .project-img {
+                height: 150px;
+            }
+
+            .back-to-top {
+                bottom: 20px;
+                right: 20px;
+                width: 40px;
+                height: 40px;
+                font-size: 1.2rem;
+            }
+
+            .social-link {
+                width: 40px;
+                height: 40px;
+                font-size: 1.2rem;
+            }
+        }
+
+        @media (min-width: 481px) and (max-width: 768px) {
+
+            /* Tablet-specific adjustments */
+            .projects-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .skill-category {
+                flex: 1 1 45%;
+            }
+
+            .cards-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .contact-form {
+                padding: 30px;
+            }
+        }
     </style>
 </head>
 
@@ -1151,7 +1328,7 @@
         <div class="container">
             <h2 class="section-title fade-in">Contact Me</h2>
             <div class="contact-form fade-in">
-                <form action="#" method="post">
+                <form action="/.netlify/functions/contact-form" method="post">
                     <div class="form-group">
                         <input type="text" name="name" class="form-control" placeholder="Your Name" required />
                     </div>
@@ -1167,7 +1344,6 @@
             </div>
         </div>
     </section>
-
     <!-- Footer -->
     <footer>
         <div class="container">
@@ -1255,6 +1431,8 @@
         // Trigger reveal on page load
         reveal();
     </script>
+    <script src="netlify/functions/contact-form.js"></script>
+
 </body>
 
 </html>
